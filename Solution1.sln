@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client-app", "client-app\client-app.csproj", "{FED5A90B-5AC9-45CD-BA21-C9D58C2820EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "client-app", "client-app\client-app.csproj", "{FED5A90B-5AC9-45CD-BA21-C9D58C2820EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomIdentityMvc", "CustomIdentityMvc\CustomIdentityMvc.csproj", "{57299010-9370-4670-9A43-BF1A06407D78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomIdentityData", "CustomIdentityData\CustomIdentityData.csproj", "{708F38B5-3F6B-4320-A65B-5B6421914529}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{FED5A90B-5AC9-45CD-BA21-C9D58C2820EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FED5A90B-5AC9-45CD-BA21-C9D58C2820EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FED5A90B-5AC9-45CD-BA21-C9D58C2820EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57299010-9370-4670-9A43-BF1A06407D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57299010-9370-4670-9A43-BF1A06407D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57299010-9370-4670-9A43-BF1A06407D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57299010-9370-4670-9A43-BF1A06407D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{708F38B5-3F6B-4320-A65B-5B6421914529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{708F38B5-3F6B-4320-A65B-5B6421914529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{708F38B5-3F6B-4320-A65B-5B6421914529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{708F38B5-3F6B-4320-A65B-5B6421914529}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
