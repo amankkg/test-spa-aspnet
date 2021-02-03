@@ -1,35 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
+import ForecastEntry from './Forecast'
 
-const array = [0, 1, 2]
+async function fetchForecast() {
+  const resp = await fetch('/weatherforecast')
+  const data = await resp.json()
 
-function Paragraph(props) {
-  console.log('my props', props)
-
-  return (
-    <p>
-      {props.index + 1}) Edit <code>src/App.js</code> and save to reload.
-    </p>
-  )
+  return data
 }
 
 function App() {
-  const paragraphs = array.map((index) =>
-    <Paragraph key={index} index={index} />)
+  const forecastArray = []
+  let count = 0
+
+  const onClick = () => {
+    count += 1
+    console.log('increment', count)
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {paragraphs}
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {forecastArray.map((f, i) =>
+          <ForecastEntry
+            key={i}
+            index={i}
+            date={f.date}
+            temperatureC={f.temperatureC}
+            summary={f.summary}
+          />
+        )}
+        <span className="App-link">
+          {count}
+        </span>
+        <button onClick={onClick}>increment</button>
       </header>
     </div>
   );
