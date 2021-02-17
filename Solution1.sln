@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomIdentityMvc", "Custom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomIdentityData", "CustomIdentityData\CustomIdentityData.csproj", "{708F38B5-3F6B-4320-A65B-5B6421914529}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{9E5D01F8-33C8-4162-95CA-69D256FDAA0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{9E5D01F8-33C8-4162-95CA-69D256FDAA0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolidDemo", "SolidDemo\SolidDemo.csproj", "{B37E12E3-FC7F-4C50-AD97-D2C6643878BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInversion", "DependencyInversion\DependencyInversion.csproj", "{5446914D-01E2-434B-8877-CD0E66BF6E07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{9E5D01F8-33C8-4162-95CA-69D256FDAA0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E5D01F8-33C8-4162-95CA-69D256FDAA0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E5D01F8-33C8-4162-95CA-69D256FDAA0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B37E12E3-FC7F-4C50-AD97-D2C6643878BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B37E12E3-FC7F-4C50-AD97-D2C6643878BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B37E12E3-FC7F-4C50-AD97-D2C6643878BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B37E12E3-FC7F-4C50-AD97-D2C6643878BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5446914D-01E2-434B-8877-CD0E66BF6E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5446914D-01E2-434B-8877-CD0E66BF6E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5446914D-01E2-434B-8877-CD0E66BF6E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5446914D-01E2-434B-8877-CD0E66BF6E07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

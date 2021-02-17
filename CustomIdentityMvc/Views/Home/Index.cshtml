@@ -1,8 +1,20 @@
-﻿@model CustomIdentityData.User
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">User's height is @Model.Height</h1>
+    <h1 class="display-4">Flag is <span id="message">@(ViewBag.Flag ? "On" : "Off")</span></h1>
+    <button id="toggle">Toggle flag</button>
 </div>
+<script>
+    const toggleBtn = document.querySelector("#toggle")
+
+    toggleBtn.addEventListener("click", async (event) => {
+        const response = await fetch('/api/toggle/invoke')
+        const nextValue = await response.text()
+
+        const message = document.querySelector("#message")
+
+        message.innerHTML = nextValue === 'true' ? 'On' : 'Off'
+    })
+</script>

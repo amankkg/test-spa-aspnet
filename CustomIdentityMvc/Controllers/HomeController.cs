@@ -21,11 +21,11 @@ namespace CustomIdentityMvc.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var user = await _db.Users.FirstAsync();
+            ViewBag.Flag = Singleton.Flag;
 
-            return View(user);
+            return View();
         }
 
         public IActionResult Privacy()
