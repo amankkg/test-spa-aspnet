@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolidDemo", "SolidDemo\SolidDemo.csproj", "{B37E12E3-FC7F-4C50-AD97-D2C6643878BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInversion", "DependencyInversion\DependencyInversion.csproj", "{5446914D-01E2-434B-8877-CD0E66BF6E07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInversion", "DependencyInversion\DependencyInversion.csproj", "{5446914D-01E2-434B-8877-CD0E66BF6E07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestCrud", "RestCrud\RestCrud.csproj", "{8B940A39-15A8-408F-A7A2-E42CE53641E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{5446914D-01E2-434B-8877-CD0E66BF6E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5446914D-01E2-434B-8877-CD0E66BF6E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5446914D-01E2-434B-8877-CD0E66BF6E07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B940A39-15A8-408F-A7A2-E42CE53641E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B940A39-15A8-408F-A7A2-E42CE53641E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B940A39-15A8-408F-A7A2-E42CE53641E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B940A39-15A8-408F-A7A2-E42CE53641E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
