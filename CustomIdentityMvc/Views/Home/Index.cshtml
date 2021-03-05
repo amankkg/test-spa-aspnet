@@ -1,9 +1,10 @@
-﻿@{
+﻿@model bool;
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Flag is <span id="message">@(ViewBag.Flag ? "On" : "Off")</span></h1>
+    <h1 class="display-4">Flag is <span id="message">@(Model ? "On" : "Off")</span></h1>
     <button id="toggle">Toggle flag</button>
 </div>
 <script>

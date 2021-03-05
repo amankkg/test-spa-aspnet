@@ -1,31 +1,26 @@
-﻿using CustomIdentityData;
-using CustomIdentityMvc.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
+using Zags.Web.Models;
 
-namespace CustomIdentityMvc.Controllers
+namespace Zags.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly CustomIdentityDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger, CustomIdentityDbContext db)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _db = db;
         }
 
-        [Authorize]
         public IActionResult Index()
         {
-            //ViewBag.Flag = Singleton.Flag;
-
-            return View(Singleton.Flag);
+            return View();
         }
 
         public IActionResult Privacy()
