@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Zags.Web.Models.Person>
+﻿@model Zags.Web.Models.SearchViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -10,32 +10,48 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<form method="get" class="mb-2">
+    <div class="form-group">
+        <label asp-for="Search.Keyword" class="control-label"></label>
+        <input asp-for="Search.Keyword" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Search.OrderBy" class="control-label"></label>
+        <select asp-for="Search.OrderBy" class="form-control">
+            <option value="@PersonOrderBy.PIN">PIN</option>
+            <option value="@PersonOrderBy.BirthDate">Birth Date</option>
+            <option value="@PersonOrderBy.FirstName">First Name</option>
+            <option value="@PersonOrderBy.LastName">Last Name</option>
+        </select>
+    </div>
+    <button class="btn btn-primary">Search</button>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PIN)
+                PIN
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                First Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                Last Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Patronymic)
+                Patronymic
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BirthDate)
+                Birth Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Gender)
+                Gender
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.People) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.PIN)

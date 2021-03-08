@@ -21,10 +21,41 @@ namespace Zags.Web.Controllers
             this.pinService = pinService;
         }
 
-        // GET: People
-        public async Task<IActionResult> Index()
+        // GET: People?search=foobar&order=firstName
+        public async Task<IActionResult> Index([FromQuery] SearchQuery search)
         {
-            return View(await _context.People.ToListAsync());
+            var request = _context.People as IQueryable<Person>;
+
+            if (!string.IsNullOrEmpty(search.Keyword))
+            {
+                request = request.Where(x =>
+                    x.FirstName.Contains(search.Keyword, StringComparison.OrdinalIgnoreCase)
+                    || x.LastName.Contains(search.Keyword, StringComparison.OrdinalIgnoreCase)
+                    || x.PIN.Contains(search.Keyword, StringComparison.OrdinalIgnoreCase));
+            }
+
+            switch (search.OrderBy)
+            {
+                case PersonOrderBy.FirstName:
+                    request = request.OrderBy(x => x.FirstName);
+                    break;
+                case PersonOrderBy.LastName:
+                    request = request.OrderBy(x => x.LastName);
+                    break;
+                case PersonOrderBy.BirthDate:
+                    request = request.OrderBy(x => x.BirthDate);
+                    break;
+                case PersonOrderBy.PIN:
+                default:
+                    request = request.OrderBy(x => x.PIN);
+                    break;
+            }
+
+            var list = await request.ToListAsync();
+
+            var data = new SearchViewModel { People = list, Search = search };
+
+            return View(data);
         }
 
         // GET: People/Details/5
@@ -56,7 +87,7 @@ namespace Zags.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FirstName,LastName,Patronymic,BirthDate,Gender")] PersonSubmitModel model)
+        public async Task<IActionResult> Create(PersonSubmitModel model)
         {
             if (!ModelState.IsValid) return View(model);
 
@@ -100,7 +131,7 @@ namespace Zags.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PIN,FirstName,LastName,Patronymic,BirthDate,Gender")] Person person)
+        public async Task<IActionResult> Edit(int id, Person person)
         {
             if (id != person.Id)
             {
